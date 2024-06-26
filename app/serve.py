@@ -21,6 +21,7 @@ from tornado.web import StaticFileHandler
 from tornado.web import RedirectHandler
 from tornado_handlers.download import DownloadHandler
 from tornado_handlers.upload import UploadHandler
+from tornado_handlers.upload import UploadExistingHandler
 from tornado_handlers.browse import BrowseHandler, BrowseDataRetrievalHandler
 from tornado_handlers.edit_entry import EditEntryHandler
 from tornado_handlers.db_info_json import DBInfoHandler
@@ -113,6 +114,7 @@ set_log_id_is_filename(show_ulog_file)
 # additional request handlers
 extra_patterns = [
     (r'/upload', UploadHandler),
+    (r'/upload_exist', UploadExistingHandler),
     (r'/browse', BrowseHandler),
     (r'/browse_data_retrieval', BrowseDataRetrievalHandler),
     (r'/3d', ThreeDHandler),
@@ -169,4 +171,5 @@ if callable(run_op):
     server.run_until_shutdown()
 else:
     server.start()
+
 

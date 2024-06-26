@@ -39,7 +39,7 @@ __STORAGE_PATH = _conf.get('general', 'storage_path')
 if not os.path.isabs(__STORAGE_PATH):
     __STORAGE_PATH = os.path.join(_cur_dir, '..', __STORAGE_PATH)
 
-__LOG_FILE_PATH = os.path.join(__STORAGE_PATH, 'log_files')
+__LOG_FILE_PATH = os.path.join(__STORAGE_PATH, './storage/00000kz')
 __DB_FILENAME = os.path.join(__STORAGE_PATH, 'logs.sqlite')
 __CACHE_FILE_PATH = os.path.join(__STORAGE_PATH, 'cache')
 __AIRFRAMES_FILENAME = os.path.join(__CACHE_FILE_PATH, 'airframes.xml')
@@ -156,3 +156,4 @@ def debug_print_timing():
 def debug_verbose_output():
     """ print verbose output? """
     return __VERBOSE_OUTPUT == 1
+
